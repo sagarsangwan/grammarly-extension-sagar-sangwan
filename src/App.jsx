@@ -6,14 +6,13 @@ import Button from "./components/button/button";
 function App() {
   const [query, setQuery] = useState("hi, i am sagar");
   const [loading, setLoading] = useState(false);
-  const onSubmit = () => {
-    console.log("clickedd");
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-    console.log("after clickedd");
+  const [suggestions, setSuggestions] = useState("");
+  const onSubmit = async () => {
+    const responnse = await fetch(
+      `https://api.languagetool.org/v2/check?text=${query}&language=en-US`
+    );
+    const data = await responnse.json();
+    console.log(data);
   };
 
   return (
