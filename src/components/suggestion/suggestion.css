@@ -1,0 +1,12 @@
+.suggestion-box {
+  padding: 20px;
+  width: -webkit-fill-available;
+  justify-content: left;
+  text-align: left;
+}
+.text-blue {
+  color: cadetblue;
+}
+.text-success {
+  color: green;
+}
