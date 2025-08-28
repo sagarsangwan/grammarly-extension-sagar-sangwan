@@ -9,7 +9,11 @@ function App() {
   return (
     <div>
       <TextInput query={query} setQuery={setQuery} />
-      <Button onClick={() => console.log(query)} type="submit">
+      <Button
+        onClick={() => console.log(query)}
+        type="submit"
+        disabled={query.length <= 10}
+      >
         Submit
       </Button>
     </div>
