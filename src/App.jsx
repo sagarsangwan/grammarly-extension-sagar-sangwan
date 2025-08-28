@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import TextInput from "./components/text-input/text-input";
-import Button from "./components/button/button";
-import ApiError from "./components/error/api-error";
+
 import ApiErrorBox from "./components/error/api-error";
 import SuggestionCard from "./components/suggestion/suggestion-card";
 import NoErrorInText from "./components/suggestion/no-error-section";
+import Button from "./components/button/button";
 
 function App() {
   const [query, setQuery] = useState("hi, i am sagar");
