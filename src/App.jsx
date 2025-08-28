@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import TextInput from "./components/text-input/text-input";
 import Button from "./components/button/button";
@@ -11,12 +11,19 @@ function App() {
   const [query, setQuery] = useState("hi, i am sagar");
   const [loading, setLoading] = useState(false);
   const [matches, setMatches] = useState([]);
-  const [allGood, setAllGood] = useState("");
+  const [hasErrors, setHasErrors] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
   const [apiError, setApiError] = useState("");
-  console.log(apiError);
+  useEffect(() => {
+    setMatches([]);
+    setHasErrors(false);
+    setApiError("");
+    setHasSubmitted(false);
+  }, [query]);
   const onSubmit = async () => {
     try {
       setLoading(true);
+      setHasSubmitted(true);
 
       const responnse = await fetch(
         `https://api.languagetool.org/v2/check?text=${query}&language=en-US`
@@ -29,10 +36,10 @@ function App() {
       if (data.matches.length > 0) {
         setApiError("");
         setMatches(data.matches);
-        setAllGood("no");
+        setHasErrors(true);
       } else {
         console.log(data.matches);
-        setAllGood("yes");
+        setHasErrors(false);
         setApiError("");
         setMatches([]);
       }
@@ -57,8 +64,8 @@ function App() {
       >
         {!loading ? "Submit" : "Loading Suggestions"}
       </Button>
-      {allGood == "yes" && <NoErrorInText />}
-      {matches.length > 0 && <SuggestionCard query={query} matches={matches} />}
+      {!hasErrors && hasSubmitted && <NoErrorInText />}
+      {hasErrors && <SuggestionCard query={query} matches={matches} />}
     </div>
   );
 }
