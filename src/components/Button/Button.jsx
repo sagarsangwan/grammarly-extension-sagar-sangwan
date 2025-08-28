@@ -11,7 +11,7 @@ function Button({
     <button
       onClick={onClick}
       type={type}
-      className={` ${className}`}
+      className={`button ${className}`}
       {...props}
     >
       {children}

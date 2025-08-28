@@ -16,7 +16,7 @@ function App() {
       setLoading(true);
 
       const responnse = await fetch(
-        `https://api.languagetool.org/v2/check?tex=${query}&language=en-US`
+        `https://api.languagetool.org/v2/check?text=${query}&language=en-US`
       );
       if (!responnse.ok) {
         setApiError("Somethong went wrong try after sometime");
@@ -34,9 +34,14 @@ function App() {
 
   return (
     <div className="container">
+      <div></div>
       {apiError && <ApiErrorBox message={apiError} />}
       <TextInput query={query} setQuery={setQuery} />
-      <Button onClick={onSubmit} type="submit" disabled={query.length <= 10}>
+      <Button
+        onClick={onSubmit}
+        type="submit"
+        disabled={query.length <= 10 || loading}
+      >
         {!loading ? "Submit" : "Loading Suggestions"}
       </Button>
     </div>
