@@ -7,13 +7,26 @@ function App() {
   const [query, setQuery] = useState("hi, i am sagar");
   const [loading, setLoading] = useState(false);
   const [suggestions, setSuggestions] = useState("");
+  const [apiError, setApiError] = useState("");
+  console.log(suggestions);
   const onSubmit = async () => {
-    const responnse = await fetch(
-      `https://api.languagetool.org/v2/check?text=${query}&language=en-US`
-    );
-    const data = await responnse.json();
+    try {
+      setLoading(true);
 
-    console.log(data.matches);
+      const responnse = await fetch(
+        `https://api.languagetool.org/v2/check?text=${query}&language=en-US`
+      );
+      if (responnse.ok) {
+        const data = await responnse.json();
+        setSuggestions(data.matches);
+        return;
+      }
+    } catch (e) {
+      console.log(e);
+      setApiError("Somethong went wrong try after sometime");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
