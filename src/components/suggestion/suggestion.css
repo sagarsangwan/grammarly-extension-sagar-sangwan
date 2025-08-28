@@ -1,5 +1,5 @@
-.suggestion-box {
-  padding: 20px;
+.suggestion-item {
+  padding: 0px 0px;
   width: -webkit-fill-available;
   justify-content: left;
   text-align: left;
@@ -9,4 +9,14 @@
 }
 .text-success {
   color: green;
+}
+
+.error-text {
+  text-decoration: underline wavy red;
+  color: red;
+}
+.suggestion-box {
+  background: gray;
+  padding: 12px;
+  border-radius: 12px;
 }

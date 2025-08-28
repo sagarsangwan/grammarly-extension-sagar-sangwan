@@ -1,12 +1,12 @@
 import React from "react";
-
+import "./suggestion.css";
 function Suggestion({ match }) {
   return (
-    <div>
+    <li className="suggestion-item">
       <p>
         {match.message} Replacement : {match.replacements[0].value}
       </p>
-    </div>
+    </li>
   );
 }
 
