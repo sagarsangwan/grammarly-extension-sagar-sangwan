@@ -12,7 +12,8 @@ function App() {
       `https://api.languagetool.org/v2/check?text=${query}&language=en-US`
     );
     const data = await responnse.json();
-    console.log(data);
+
+    console.log(data.matches);
   };
 
   return (
