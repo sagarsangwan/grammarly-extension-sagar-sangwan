@@ -28,7 +28,7 @@ function App() {
       const responnse = await fetch(
         `https://api.languagetool.org/v2/check?text=${query}&language=en-US`
       );
-      if (!responnse.ok) {
+      if (responnse.ok) {
         setApiError("Somethong went wrong try after sometime");
         return;
       }
@@ -38,7 +38,6 @@ function App() {
         setMatches(data.matches);
         setHasErrors(true);
       } else {
-        console.log(data.matches);
         setHasErrors(false);
         setApiError("");
         setMatches([]);
@@ -54,7 +53,6 @@ function App() {
   return (
     <div className="container">
       <div></div>
-      {apiError && <ApiErrorBox message={apiError} />}
       <TextInput query={query} setQuery={setQuery} />
 
       <Button
@@ -64,8 +62,17 @@ function App() {
       >
         {!loading ? "Submit" : "Loading Suggestions"}
       </Button>
-      {!hasErrors && hasSubmitted && <NoErrorInText />}
-      {hasErrors && <SuggestionCard query={query} matches={matches} />}
+      {loading ? (
+        <div>loading ....</div>
+      ) : apiError ? (
+        <ApiErrorBox message={apiError} />
+      ) : hasSubmitted ? (
+        hasErrors ? (
+          <SuggestionCard query={query} matches={matches} />
+        ) : (
+          <NoErrorInText />
+        )
+      ) : null}
     </div>
   );
 }

@@ -5,7 +5,6 @@ function SuggestionCard({ matches, query }) {
   let highlightedText = "";
   let lastIndex = 0;
   matches.forEach((match) => {
-    console.log(match.replacements[0].value, ";;;;;;;;");
     const start = match.offset;
     const end = match.offset + match.length;
     highlightedText += query.slice(lastIndex, start);
