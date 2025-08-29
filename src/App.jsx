@@ -28,7 +28,7 @@ function App() {
       const responnse = await fetch(
         `https://api.languagetool.org/v2/check?text=${query}&language=en-US`
       );
-      if (responnse.ok) {
+      if (!responnse.ok) {
         setApiError("Somethong went wrong try after sometime");
         return;
       }
