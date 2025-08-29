@@ -1,9 +1,10 @@
 .suggestion-item {
-  padding: 0px 0px;
+  padding: 0;
   width: -webkit-fill-available;
   justify-content: left;
   text-align: left;
 }
+
 .text-blue {
   color: blue;
 }
@@ -16,10 +17,13 @@
 .error-text {
   text-decoration: underline wavy red;
 }
+
 .suggestion-box {
   padding: 12px;
   border-radius: 12px;
-  border: 1px solid gray;
+  border: 1px solid #dcdcdc;
   margin-top: 54px;
-  color: black;
+  color: #000;
+  width: 100%;
+  background: floralwhite;
 }

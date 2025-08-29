@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="container">
       <div>
-        <h1 className="">Query Highlighter</h1>
+        <h1 className="">Check Grammar</h1>
       </div>
       <TextInput query={query} setQuery={setQuery} />
 
@@ -64,9 +64,7 @@ function App() {
       >
         {!loading ? "Check" : "Loading Suggestions"}
       </Button>
-      {loading ? (
-        <p>loading ....</p>
-      ) : apiError ? (
+      {loading ? null : apiError ? (
         <ApiErrorBox message={apiError} />
       ) : hasSubmitted ? (
         hasErrors ? (

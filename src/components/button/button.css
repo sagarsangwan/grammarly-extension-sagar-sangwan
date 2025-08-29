@@ -1,16 +1,14 @@
-
 .button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-   
-  }
-  .button:hover {
-    border-color: #fff;
-  }
-  
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 12px 46px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: #fff;
+}

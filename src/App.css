@@ -1,19 +1,22 @@
 .container {
-  display: flex;
   flex-direction: column;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   min-width: 320px;
-  max-width: 600px;
+  max-width: 760px;
   width: -webkit-fill-available;
-  min-height: 100vh;
   gap: 12px;
+  padding: 0 16px;
 }
 
 p {
   color: black;
 }
 h1 {
-  color: black;
-  margin-bottom: 55px;
+  padding-top: 30px;
+  font-family: cursive;
+  font-size: 45px;
+  margin-bottom: 18px;
+  margin: 0;
+  font-weight: 600;
 }

@@ -1,7 +1,7 @@
 .error-div {
   justify-content: center;
   border: solid 1px red;
-  padding: 0px 16px;
+  padding: 0 16px;
 }
 
 .error-p {

@@ -1,12 +1,15 @@
 .text-area {
-  min-height: 120px;
+  min-height: 160px;
   width: 100%;
-  box-sizing: border-box;
   padding: 12px;
-  border: 1px solid gray;
+  border: 1px solid #e0e0e054;
   border-radius: 4px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: black;
+  background: #fff;
+  color: #000;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 12px;
+  padding: 32px 24px;
+  font-size: 18px;
+  font-weight: normal;
 }
