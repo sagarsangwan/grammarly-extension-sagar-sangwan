@@ -10,14 +10,14 @@ function SuggestionCard({ matches, query }) {
     highlightedText += query.slice(lastIndex, start);
     console.log(match?.replacements[0]);
     const error = query.slice(start, end);
-    highlightedText += `<span class="error-text" data-replacement="${match?.replacements[0]?.value}">${error}</span>`;
+    highlightedText += `<span class="error-text" data-replacement="${match?.replacements[0]?.value} ">${error}</span>`;
     lastIndex = end;
   });
   highlightedText += query.slice(lastIndex);
   return (
     <div className="suggestion-box">
       <p>
-        <span className="text-blue">Your Text: </span>
+        <span className="text-blue">Your Text : </span>
         <span
           style={{ whiteSpace: "pre-wrap" }}
           dangerouslySetInnerHTML={{ __html: highlightedText }}
