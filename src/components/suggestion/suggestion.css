@@ -10,13 +10,16 @@
 .text-success {
   color: green;
 }
+.no-error-div {
+}
 
 .error-text {
   text-decoration: underline wavy red;
-  color: red;
 }
 .suggestion-box {
-  background: gray;
   padding: 12px;
   border-radius: 12px;
+  border: 1px solid gray;
+  margin-top: 54px;
+  color: black;
 }

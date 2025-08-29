@@ -28,7 +28,7 @@ function App() {
       const responnse = await fetch(
         `https://api.languagetool.org/v2/check?text=${query}&language=en-US`
       );
-      if (responnse.ok) {
+      if (!responnse.ok) {
         setApiError("Somethong went wrong try after sometime");
         return;
       }
@@ -52,7 +52,9 @@ function App() {
 
   return (
     <div className="container">
-      <div></div>
+      <div>
+        <h1 className="app-h1">Query Highlighter</h1>
+      </div>
       <TextInput query={query} setQuery={setQuery} />
 
       <Button
@@ -60,7 +62,7 @@ function App() {
         type="submit"
         disabled={query.length <= 10 || loading}
       >
-        {!loading ? "Submit" : "Loading Suggestions"}
+        {!loading ? "Check" : "Loading Suggestions"}
       </Button>
       {loading ? (
         <div>loading ....</div>

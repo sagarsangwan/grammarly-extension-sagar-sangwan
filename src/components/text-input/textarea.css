@@ -2,8 +2,11 @@
   min-height: 120px;
   width: 100%;
   box-sizing: border-box;
-  padding: 8px;
-  border: 1px solid #fff;
+  padding: 12px;
+  border: 1px solid gray;
   border-radius: 4px;
   overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: black;
 }

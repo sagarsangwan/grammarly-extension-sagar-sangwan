@@ -1,10 +1,16 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
   display: flex;
-  justify-content: center;
   align-items: center;
   min-width: 320px;
+  max-width: 600px;
+  width: -webkit-fill-available;
   min-height: 100vh;
   gap: 12px;
+}
+
+h1 {
+  color: black;
+  margin-bottom: 55px;
 }

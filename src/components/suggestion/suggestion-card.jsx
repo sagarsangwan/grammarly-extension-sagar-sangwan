@@ -8,9 +8,9 @@ function SuggestionCard({ matches, query }) {
     const start = match.offset;
     const end = match.offset + match.length;
     highlightedText += query.slice(lastIndex, start);
-
+    console.log(match?.replacements[0]);
     const error = query.slice(start, end);
-    highlightedText += `<span class="error-text" data-replacement="${match.replacements[0].value}">${error}</span>`;
+    highlightedText += `<span class="error-text" data-replacement="${match?.replacements[0]?.value}">${error}</span>`;
     lastIndex = end;
   });
   highlightedText += query.slice(lastIndex);
